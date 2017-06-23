@@ -48,19 +48,19 @@ class Population():
         for individual in self.individuals:
             self.genotypes_count[individual.genotype()] += 1
 
-        if file_path:
-            file = open(file_path, 'a')
-            file.write(str(self.generations) + '\t')
-            for i, (genotype, value) in enumerate(self.genotypes_count.items()):
-                file.write(str(value))
-                if i < len(self.genotypes_count.items()) - 1:
-                    file.write('\t')
-            file.write('\n')
-        else:
-            print(str(self.generations) + '\t')
-            for genotype, value in self.genotypes_count.items():
-                print('/'.join(g for g in genotype) + ' : ' + str(value) + '\t')
-            print('\n')
+        # if file_path:
+        #     file = open(file_path, 'a')
+        #     file.write(str(self.generations) + '\t')
+        #     for i, (genotype, value) in enumerate(self.genotypes_count.items()):
+        #         file.write(str(value))
+        #         if i < len(self.genotypes_count.items()) - 1:
+        #             file.write('\t')
+        #     file.write('\n')
+        # else:
+        #     print(str(self.generations) + '\t')
+        #     for genotype, value in self.genotypes_count.items():
+        #         print('/'.join(g for g in genotype) + ' : ' + str(value) + '\t')
+        #     print('\n')
 
     def update(self):
 
